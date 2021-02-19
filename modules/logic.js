@@ -1,12 +1,14 @@
 import words from "./data.js"
 
 let gameEngine = {
-    //Seleciona as palavras de forma aleatória
+    selectedWord: "",
+    selectedTip: "",
     wordSelector: function() {
         let arrayLength = words.length
         let randomIndex = Math.floor(Math.random() * arrayLength )
-        return words[randomIndex]
-    }
-}
+        this.selectedWord = words[randomIndex].word
+        this.selectedTip = words[randomIndex].tip
+    },
+} 
 
-document.getElementById("info-game").innerHTML = gameEngine.wordSelector().word
+export default gameEngine
