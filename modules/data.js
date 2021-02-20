@@ -1,4 +1,4 @@
-let words = [
+export default [
     { word: "carro", tip:"Meio de Transporte" },
     { word: "banana", tip:"Fruta" },
     { word: "abacate", tip: "Fruta" },
@@ -10,5 +10,3 @@ let words = [
     { word: "celular", tip: "Dispositivo"},
     { word: "limonada", tip: "Bebida"},
 ]
-
-export default words;

@@ -1,6 +1,7 @@
 import words from "./data.js"
+import domManipulation from "./interface.js"
 
-let gameEngine = {
+export default {
     selectedWord: "",
     selectedTip: "",
     wordSelector: function() {
@@ -10,5 +11,3 @@ let gameEngine = {
         this.selectedTip = words[randomIndex].tip
     },
 } 
-
-export default gameEngine

@@ -86,6 +86,10 @@ body {
     box-shadow: 4px 4px 10px rgba(5, 42, 66, 0.699);
 }
 
+.letter span {
+    visibility: hidden;
+}
+
 .inputs {
     display: flex;
     flex-direction: column;
