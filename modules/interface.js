@@ -1,14 +1,14 @@
 import gameEngine from "./logic.js"
 
 export default {
-    wrongLetters: document.getElementById("wrong-letters"),
-    infoGame: document.getElementById("info-game"),
-    tip: document.getElementById("tip"),
+    boxWrongLetters: document.getElementById("wrong-letters"),
+    boxGameInfo: document.getElementById("info-game"),
+    boxTip: document.getElementById("tip"),
     tryImg: document.getElementById("try-image"),
     tryBtn: document.getElementById("try-btn"),
     answerBtn: document.getElementById("answer-btn"),
     letterInput: document.getElementById("letter-input"),
-    wordGenerator: function() {
+    displaysWord: function() {
         for (let index in gameEngine.selectedWord) {
             let spanElement = document.createElement("span")
             let divElement = document.createElement("div")
@@ -20,13 +20,13 @@ export default {
         }
     },
     addTip: function(tip) {
-        this.tip.innerHTML = tip
+        this.boxTip.innerHTML = tip
     },
     addWrongLetters: function(letter) {
-        this.wrongLetters.innerHTML = letter 
+        this.boxWrongLetters.innerHTML = letter 
     },
-    addInfoGame: function(info) {
-        this.infoGame.innerHTML = info
+    addGameInfo: function(info) {
+        this.boxGameInfo.innerHTML = info
     },
     showLetter: function(letter) {
         letter.style.visibility = "visible"
