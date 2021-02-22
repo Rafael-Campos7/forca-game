@@ -6,7 +6,7 @@
 
 body {
     background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
-   
+    
 }
 
 .main-container {
@@ -22,7 +22,7 @@ body {
 }
 
 #try-image {
-    height: 550px;
+    height: 620px;
     width: 400px;
     box-shadow: 4px 4px 10px rgba(5, 42, 66, 0.699);
     border-radius: 25px;
@@ -33,7 +33,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 550px;
+    height: 620px;
     border-radius: 25px;
 }
 
