@@ -81,11 +81,11 @@ export default {
         this.onAllLettersCorrect()
     },
     gameOverActions: function() {
-        domManipulation.setGameInfo("Você perdeu")
+        domManipulation.setGameInfo("Game Over, Você perdeu! ")
         domManipulation.endGame(this.selectedWord, 0)
     },
     gameWinActions: function() {
-        domManipulation.setGameInfo("Você ganhou")
+        domManipulation.setGameInfo("Parabéns, você acertou a palavra!")
         domManipulation.endGame(this.selectedWord, 1)
     },
     onAllLettersCorrect: function() {
