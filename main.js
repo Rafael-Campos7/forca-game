@@ -1,4 +1,4 @@
-import gameEngine from "./modules/logic.js"
+import gameEngine from "./modules/gamelogic.js"
 import domManipulation from "./modules/interface.js"
 
 function onStarted() {
