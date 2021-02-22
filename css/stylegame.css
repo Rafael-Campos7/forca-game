@@ -6,6 +6,7 @@
 
 body {
     background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+   
 }
 
 .main-container {
@@ -98,15 +99,14 @@ body {
     justify-content: center;
     align-content: space-between;
     border-radius: 20px;
-    height: 176px;
-    padding: 25px 45px;
+    padding: 25px 35px;
     background-color: white;
     box-shadow: 4px 4px 10px rgba(5, 42, 66, 0.699);
 }
 
 #letter-input {
     margin: 0px auto 15px auto;
-    width: 357px;
+    width: 534px;
     text-transform: uppercase;
     text-align: center;
     font-size: 30pt;
@@ -122,13 +122,14 @@ body {
     outline: 0;
     border-bottom: 12px solid rgb(160, 12, 12);
 }
-
 .btn {
     font-size: 18pt;
+    text-align: center;
+    color: rgb(160, 12, 12);
     font-weight: bold;
     margin: 0px 5px;
-    padding: 10px;
-    width: 171px;
+    padding: 15px;
+    width: 260px;
     transition: 0.4s;
     background-color: white;
     border-radius: 5px;
@@ -150,4 +151,8 @@ body {
 
 .btn:focus {
     outline: 0;
+}
+
+#againBtn {
+    display: none;
 }

@@ -13,6 +13,11 @@ function onAnswered() {
     gameEngine.onAnsweredActions()
 }
 
+function restart() {
+    location.reload()
+}
+
 window.addEventListener("load", onStarted)
 domManipulation.tryBtn.addEventListener("click", onTryed)
 domManipulation.answerBtn.addEventListener("click", onAnswered)
+domManipulation.againBtn.addEventListener("click", restart)

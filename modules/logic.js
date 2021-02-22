@@ -82,9 +82,11 @@ export default {
     },
     gameOverActions: function() {
         domManipulation.setGameInfo("Você perdeu")
+        domManipulation.endGame(this.selectedWord, 0)
     },
     gameWinActions: function() {
         domManipulation.setGameInfo("Você ganhou")
+        domManipulation.endGame(this.selectedWord, 1)
     },
     onAllLettersCorrect: function() {
         if (this.selectedWord.length == this.hits) {
