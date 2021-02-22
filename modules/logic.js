@@ -3,7 +3,8 @@ import domManipulation from "./interface.js"
 import tryValidations from "./validations.js"
 
 export default {
-    amountErrors: 1,
+    hits: 0,
+    attempts: 1,
     inputAnswer: "",
     inputLetter: "",
     selectedWord: "",
@@ -31,24 +32,28 @@ export default {
         for (let index in this.letterCheck) {
             if (index > 0) {
                 domManipulation.setLetter(this.letterCheck[index])
+                this.hits += 1
             }
         }
         domManipulation.inputLetter.value = ""
+        domManipulation.inputLetter.focus()
     },
     wrongLetterActions: function() {
         this.triedLetters.push(this.inputLetter)
         this.wrongLetters.push(this.inputLetter)
         domManipulation.setGameInfo("A palavra não possui essa letra. </br> Insira outra letra ou responda!")
         domManipulation.setWrongLetters(this.wrongLetters.join(" ", ","))
-        this.amountErrors += 1
-        domManipulation.changeImg(this.amountErrors) 
+        this.attempts += 1
+        domManipulation.changeImg(this.attempts) 
         domManipulation.inputLetter.value = ""
+        domManipulation.inputLetter.focus()
     },
     onStartedActions: function() {
         this.getWord()
         domManipulation.setTip(this.selectedTip)
         domManipulation.setGameInfo("Insira uma letra ou responda!")
         domManipulation.setWord(this.selectedWord)
+        domManipulation.inputLetter.focus()
     },
     onTryedActions: function() {
         this.getTryValidations()
@@ -72,12 +77,24 @@ export default {
                 domManipulation.setGameInfo("Tente somente uma letra por vez")        
                 domManipulation.inputLetter.value = ""
         }
+        this.onFinishedAttempts()
+        this.onAllLettersCorrect()
     },
     gameOverActions: function() {
         domManipulation.setGameInfo("Você perdeu")
     },
     gameWinActions: function() {
         domManipulation.setGameInfo("Você ganhou")
+    },
+    onAllLettersCorrect: function() {
+        if (this.selectedWord.length == this.hits) {
+            this.gameWinActions()
+        }
+    },
+    onFinishedAttempts: function() {
+        if (this.attempts == 7) {
+            this.gameOverActions()
+        }
     },
     onAnsweredActions: function() {
         this.inputAnswer = domManipulation.inputLetter.value
