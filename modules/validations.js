@@ -14,7 +14,7 @@ let tryValidations = {
         for (let index in word) {
             if (word[index] == inputLetter) {
                 result[0] = true
-                result.push(index)
+                result.push(index.toString())
             }
         }
         return result

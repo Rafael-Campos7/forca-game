@@ -56,6 +56,7 @@ body {
     margin-top: 15px;
     letter-spacing: 7px;
     font-family: cursive;
+    text-transform: uppercase;
     font-size: 20pt;
     font-weight: bold;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.226);
@@ -88,6 +89,7 @@ body {
 
 .letter span {
     visibility: hidden;
+    text-transform: uppercase;
 }
 
 .inputs {

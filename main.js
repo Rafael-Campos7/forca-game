@@ -2,18 +2,19 @@ import gameEngine from "./modules/logic.js"
 import domManipulation from "./modules/interface.js"
 
 function onStarted() {
-    gameEngine.wordSelector()
-    domManipulation.addTip(gameEngine.selectedTip)
-    gameEngine.gameInstructions(1)
-    domManipulation.displaysWord()
+    gameEngine.getWord()
+    domManipulation.setTip(gameEngine.selectedTip)
+    domManipulation.setGameInfo("Insira uma letra ou responda!")
+    domManipulation.displaysWord(gameEngine.selectedWord)
 }
 
 function onTryed() {
-    
+    gameEngine.onTryActions()
 }
 
 function onAnswered() {
 
 }
 
-document.onload = onStarted()
+onStarted()
+domManipulation.tryBtn.addEventListener("click", onTryed)

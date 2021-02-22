@@ -1,5 +1,3 @@
-import gameEngine from "./logic.js"
-
 export default {
     boxWrongLetters: document.getElementById("wrong-letters"),
     boxGameInfo: document.getElementById("info-game"),
@@ -7,31 +5,31 @@ export default {
     tryImg: document.getElementById("try-image"),
     tryBtn: document.getElementById("try-btn"),
     answerBtn: document.getElementById("answer-btn"),
-    letterInput: document.getElementById("letter-input"),
-    displaysWord: function() {
-        for (let index in gameEngine.selectedWord) {
+    inputLetter: document.getElementById("letter-input"),
+    displaysWord: function(selectedWord) {
+        for (let index in selectedWord) {
             let spanElement = document.createElement("span")
             let divElement = document.createElement("div")
             divElement.className = "letter"
             spanElement.id = "letter" + index
             divElement.appendChild(spanElement)
-            spanElement.innerHTML = gameEngine.selectedWord[index]
+            spanElement.innerHTML = selectedWord[index]
             document.getElementById("letterCont").appendChild(divElement)
         }
     },
-    addTip: function(tip) {
+    setTip: function(tip) {
         this.boxTip.innerHTML = tip
     },
-    addWrongLetters: function(letter) {
+    setWrongLetters: function(letter) {
         this.boxWrongLetters.innerHTML = letter 
     },
-    addGameInfo: function(info) {
+    setGameInfo: function(info) {
         this.boxGameInfo.innerHTML = info
     },
-    showLetter: function(letter) {
-        letter.style.visibility = "visible"
+    setLetter: function(id) {
+        document.getElementById("letter" + id).style.visibility = "visible"
     },
-    changeImg: function(imgSrc) {
-        this.tryImg.src = imgSrc
+    changeImg: function(id) {
+        this.tryImg.src = "../images/tentativa" + id + ".png"
     },
 }
