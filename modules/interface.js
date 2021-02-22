@@ -6,7 +6,7 @@ export default {
     tryBtn: document.getElementById("try-btn"),
     answerBtn: document.getElementById("answer-btn"),
     inputLetter: document.getElementById("letter-input"),
-    displaysWord: function(selectedWord) {
+    setWord: function(selectedWord) {
         for (let index in selectedWord) {
             let spanElement = document.createElement("span")
             let divElement = document.createElement("div")

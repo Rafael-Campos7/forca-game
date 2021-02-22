@@ -4,6 +4,7 @@ import tryValidations from "./validations.js"
 
 export default {
     amountErrors: 1,
+    inputAnswer: "",
     inputLetter: "",
     selectedWord: "",
     selectedTip: "",
@@ -18,7 +19,7 @@ export default {
         this.selectedWord = words[randomIndex].word
         this.selectedTip = words[randomIndex].tip
     },
-    getValidations: function() {
+    getTryValidations: function() {
         this.inputLetter = domManipulation.inputLetter.value
         this.inputLength = this.inputLetter.length
         this.alreadyInserted = !tryValidations.alreadyInserted(this.inputLetter, this.triedLetters)
@@ -43,8 +44,14 @@ export default {
         domManipulation.changeImg(this.amountErrors) 
         domManipulation.inputLetter.value = ""
     },
-    onTryActions: function() {
-        this.getValidations()
+    onStartedActions: function() {
+        this.getWord()
+        domManipulation.setTip(this.selectedTip)
+        domManipulation.setGameInfo("Insira uma letra ou responda!")
+        domManipulation.setWord(this.selectedWord)
+    },
+    onTryedActions: function() {
+        this.getTryValidations()
         switch (this.inputLength) {
             case 1:
                     if (this.alreadyInserted) {
@@ -64,6 +71,24 @@ export default {
             default:
                 domManipulation.setGameInfo("Tente somente uma letra por vez")        
                 domManipulation.inputLetter.value = ""
+        }
+    },
+    gameOverActions: function() {
+        domManipulation.setGameInfo("Você perdeu")
+    },
+    gameWinActions: function() {
+        domManipulation.setGameInfo("Você ganhou")
+    },
+    onAnsweredActions: function() {
+        this.inputAnswer = domManipulation.inputLetter.value
+        if (this.inputAnswer.length > 0) {
+            if (this.inputAnswer == this.selectedWord) {
+                this.gameWinActions()
+            } else {
+                this.gameOverActions()
+            }
+        } else {
+            domManipulation.setGameInfo("Digite uma palavra para responder")
         }
     },
 } 

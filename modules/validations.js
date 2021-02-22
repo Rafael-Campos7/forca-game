@@ -1,4 +1,4 @@
-let tryValidations = {
+export default {
     alreadyInserted: function(inputLetter,trieds) {
         let result = false
         const check = (value) => {
@@ -21,5 +21,3 @@ let tryValidations = {
     }
 
 }
-
-export default tryValidations
