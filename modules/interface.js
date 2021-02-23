@@ -53,6 +53,6 @@ export default {
         document.getElementById("letter" + id).style.visibility = "visible"
     },
     changeImg: function(id) {
-        this.tryImg.src = "../images/tentativa" + id + ".png"
+        this.tryImg.src = "./images/tentativa" + id + ".png"
     },
 }
