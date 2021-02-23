@@ -76,7 +76,7 @@ export default [
     { word: "sertanejo", tip: "Música"},
     { word: "pagode", tip: "Música"},
     { word: "samba", tip: "Música"},
-    { word: "corinthians", tip: "Time"},
+    { word: "neve", tip: "Inverno"},
     { word: "palmeiras", tip: "Sem Mundial"},
     { word: "cinema", tip: "Filme"},
     { word: "netflix", tip: "Streaming"},
