@@ -41,6 +41,7 @@ export default {
     wrongLetterActions: function() {
         this.triedLetters.push(this.inputLetter)
         this.wrongLetters.push(this.inputLetter)
+        domManipulation.reactPage()
         domManipulation.setGameInfo("A palavra não possui essa letra. </br> Insira outra letra ou responda!")
         domManipulation.setWrongLetters(this.wrongLetters.join(" ", ","))
         this.attempts += 1

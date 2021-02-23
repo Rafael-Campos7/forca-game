@@ -1,4 +1,5 @@
 export default {
+    cont: 8,
     boxWrongLetters: document.getElementById("wrong-letters"),
     boxGameInfo: document.getElementById("info-game"),
     boxTip: document.getElementById("tip"),
@@ -19,13 +20,17 @@ export default {
             document.getElementById("letterCont").appendChild(divElement)
         }
     },
+    reactPage: function() {
+        document.body.style.backgroundImage = "linear-gradient(to top, rgba(55, 98, 172, 0." + this.cont + "99) 0%, rgba(156, 230, 255, 0." + this.cont  + "99) 100%)"
+        --this.cont
+    },
     endGame: function(word, winOrOver) {
         for(let index in word) {
             this.setLetter(index)
         }
         switch(winOrOver) {
             case 0:
-                document.body.style.backgroundImage = "linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%)"
+                document.body.style.backgroundImage = "linear-gradient(to top, rgba(55, 98, 172, 0.399) 0%, rgba(156, 230, 255, 0.399) 100%)"
                 break
             case 1:
                 document.body.style.backgroundImage = "linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)"
